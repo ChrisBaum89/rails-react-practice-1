@@ -1,0 +1,1309 @@
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateItems (20221207141206)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221207141206"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-07 14:14:18.133270"], ["updated_at", "2022-12-07 14:14:18.133270"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "take out trash"], ["created_at", "2022-12-07 14:14:36.901790"], ["updated_at", "2022-12-07 14:14:36.901790"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "do dishes"], ["created_at", "2022-12-07 14:14:46.981115"], ["updated_at", "2022-12-07 14:14:46.981115"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "clean toilet"], ["created_at", "2022-12-07 14:14:59.370808"], ["updated_at", "2022-12-07 14:14:59.370808"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "mow grass"], ["created_at", "2022-12-07 14:15:06.421954"], ["updated_at", "2022-12-07 14:15:06.421954"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2022-12-07 09:20:39 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/chrisbaum/.rvm/gems/ruby-2.6.1/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/chrisbaum/.rvm/gems/ruby-2.6.1/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.5ms | Allocations: 484)
+Completed 200 OK in 17ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 4197)
+
+
+Started GET "/items" for ::1 at 2022-12-07 09:20:42 -0500
+Processing by ItemsController#index as HTML
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 347)
+
+
+Started GET "/items" for ::1 at 2022-12-07 09:20:45 -0500
+Processing by ItemsController#index as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 44)
+
+
+Started GET "/items" for ::1 at 2022-12-07 09:22:10 -0500
+Processing by ItemsController#index as HTML
+Completed 500 Internal Server Error in 3ms (Allocations: 1833)
+
+
+  
+NameError (undefined local variable or method `item' for #<ItemsController:0x007fc7251fa060>
+Did you mean?  items):
+  
+app/controllers/items_controller.rb:5:in `index'
+Started GET "/items" for ::1 at 2022-12-07 09:22:19 -0500
+Processing by ItemsController#index as HTML
+Completed 204 No Content in 1ms (Allocations: 306)
+
+
+Started GET "/items" for ::1 at 2022-12-07 09:22:22 -0500
+Processing by ItemsController#index as HTML
+Completed 204 No Content in 0ms (Allocations: 35)
+
+
+Started GET "/items" for ::1 at 2022-12-07 09:22:27 -0500
+Processing by ItemsController#index as HTML
+Completed 204 No Content in 1ms (Allocations: 305)
+
+
+Started GET "/items" for ::1 at 2022-12-07 09:22:53 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 2481)
+
+
+Started GET "/items" for ::1 at 2022-12-07 09:23:23 -0500
+Processing by ItemsController#index as HTML
+Completed 500 Internal Server Error in 8ms (Allocations: 1695)
+
+
+  
+NoMethodError (undefined method `ItemSerializer' for #<ItemsController:0x007fce7a507008>
+Did you mean?  items_url):
+  
+app/controllers/items_controller.rb:5:in `index'
+Started GET "/items" for ::1 at 2022-12-07 09:23:48 -0500
+Processing by ItemsController#index as HTML
+Completed 500 Internal Server Error in 6ms (Allocations: 1682)
+
+
+  
+NoMethodError (undefined method `ItemSerializer' for #<ItemsController:0x007fce3fc8d740>
+Did you mean?  items_url):
+  
+app/controllers/items_controller.rb:5:in `index'
+Started GET "/items" for ::1 at 2022-12-07 09:27:19 -0500
+Processing by ItemsController#index as HTML
+Completed 500 Internal Server Error in 5ms (Allocations: 1515)
+
+
+  
+NoMethodError (undefined method `to_sym' for [:description]:Array
+Did you mean?  to_s
+               to_set):
+  
+app/serializers/item_serializer.rb:3:in `<class:ItemSerializer>'
+app/serializers/item_serializer.rb:1:in `<main>'
+app/controllers/items_controller.rb:5:in `index'
+Started GET "/items" for ::1 at 2022-12-07 09:28:44 -0500
+Processing by ItemsController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 3.5ms | Allocations: 4379)
+
+
+Started GET "/items" for ::1 at 2022-12-07 09:28:46 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 793)
+
+
+Started GET "/items/1" for ::1 at 2022-12-07 09:29:33 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/items_controller.rb:9:in `show'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.2ms | Allocations: 5129)
+
+
+  
+NoMethodError (undefined method `to_sym' for [:description]:Array
+Did you mean?  to_s
+               to_set):
+  
+app/serializers/item_serializer.rb:3:in `<class:ItemSerializer>'
+app/serializers/item_serializer.rb:1:in `<main>'
+app/controllers/items_controller.rb:10:in `show'
+Started GET "/items/1" for ::1 at 2022-12-07 09:29:48 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.9ms | Allocations: 7436)
+
+
+  
+NoMethodError (undefined method `to_sym' for [:description]:Array
+Did you mean?  to_s
+               to_set):
+  
+app/serializers/item_serializer.rb:3:in `<class:ItemSerializer>'
+app/serializers/item_serializer.rb:1:in `<main>'
+app/controllers/items_controller.rb:10:in `show'
+Started GET "/items/1" for ::1 at 2022-12-07 09:30:16 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/items_controller.rb:9:in `show'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.0ms | Allocations: 4885)
+
+
+  
+NoMethodError (undefined method `to_sym' for [:description]:Array
+Did you mean?  to_s
+               to_set):
+  
+app/serializers/item_serializer.rb:3:in `<class:ItemSerializer>'
+app/serializers/item_serializer.rb:1:in `<main>'
+app/controllers/items_controller.rb:10:in `show'
+Started GET "/items/" for ::1 at 2022-12-07 09:30:19 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 879)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:31:42 -0500
+Processing by ItemsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.9ms | Allocations: 4297)
+
+
+Started GET "/items/1" for ::1 at 2022-12-07 09:32:02 -0500
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:9:in `show'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 749)
+
+
+Started GET "/index" for ::1 at 2022-12-07 09:43:20 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+Started GET "/index" for ::1 at 2022-12-07 09:43:20 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+Started GET "/items" for ::1 at 2022-12-07 09:43:30 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 32ms (Views: 9.0ms | ActiveRecord: 1.3ms | Allocations: 6388)
+
+
+Started GET "/items" for ::1 at 2022-12-07 09:43:30 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:43:35 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 908)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:43:35 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:45:18 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.4ms | Allocations: 908)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:45:18 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:45:40 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 11ms (Views: 4.0ms | ActiveRecord: 0.6ms | Allocations: 6368)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:45:40 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:47:48 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.6ms | Allocations: 908)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:47:48 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:48:04 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 22ms (Views: 14.0ms | ActiveRecord: 0.8ms | Allocations: 908)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:48:04 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:51:31 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.5ms | Allocations: 908)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:51:31 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:51:33 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 908)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:51:33 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:52:27 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.9ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:52:27 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:52:36 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.5ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:52:36 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:52:54 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 21ms (Views: 10.8ms | ActiveRecord: 0.7ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:52:54 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.2ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:53:22 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.8ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:53:22 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:54:14 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.6ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:54:14 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:54:16 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:54:16 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:55:03 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.7ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:55:03 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:55:05 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:55:05 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:55:53 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.7ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:55:53 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:56:11 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.5ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:56:11 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 891)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:56:35 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:56:35 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:56:59 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.5ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:56:59 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:58:15 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.5ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 09:58:15 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:04:32 -0500
+Processing by ItemsController#index as */*
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 6.4ms | Allocations: 1489)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:04:32 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:04:32 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:04:32 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:04:37 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 10ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 891)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:04:37 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:04:50 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.6ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:04:50 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:05:07 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 12ms (Views: 8.0ms | ActiveRecord: 0.8ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:05:07 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.4ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:05:16 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (3.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 60ms (Views: 40.4ms | ActiveRecord: 3.7ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:05:16 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:06:00 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.8ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:06:00 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:10:54 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (28.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 66ms (Views: 15.2ms | ActiveRecord: 28.6ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:10:54 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:10:54 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:10:54 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:10:54 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:10:54 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started DELETE "/items/4" for ::1 at 2022-12-07 10:12:25 -0500
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"4", "item"=>{}}
+Started GET "/items/" for ::1 at 2022-12-07 10:12:25 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.7ms | Allocations: 922)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:12:25 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 900)
+
+
+  [1m[36mItem Load (7.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Destroy (1.2ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+Completed 204 No Content in 79ms (ActiveRecord: 10.1ms | Allocations: 8633)
+
+
+Started DELETE "/items/4" for ::1 at 2022-12-07 10:12:27 -0500
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"4", "item"=>{}}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 898)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/items_controller.rb:14:in `destroy'
+Started GET "/items/" for ::1 at 2022-12-07 10:12:41 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.4ms | Allocations: 820)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:12:41 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 821)
+
+
+Started DELETE "/items/3/" for ::1 at 2022-12-07 10:12:44 -0500
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"3", "item"=>{}}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Destroy (0.7ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+Completed 204 No Content in 14ms (ActiveRecord: 2.3ms | Allocations: 1730)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:12:47 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 754)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:12:47 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 753)
+
+
+Started DELETE "/items/2/" for ::1 at 2022-12-07 10:12:53 -0500
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"2", "item"=>{}}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+Completed 204 No Content in 7ms (ActiveRecord: 2.5ms | Allocations: 1727)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:12:55 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 685)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:12:55 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 685)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:15:08 -0500
+Processing by ItemsController#index as */*
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 2.8ms | Allocations: 5612)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:15:09 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 685)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItem Create (1.3ms)[0m  [1m[32mINSERT INTO "items" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "mow grass"], ["created_at", "2022-12-07 15:15:33.141416"], ["updated_at", "2022-12-07 15:15:33.141416"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItem Create (0.7ms)[0m  [1m[32mINSERT INTO "items" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "take out trash"], ["created_at", "2022-12-07 15:15:43.502180"], ["updated_at", "2022-12-07 15:15:43.502180"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItem Create (0.8ms)[0m  [1m[32mINSERT INTO "items" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "clean floor"], ["created_at", "2022-12-07 15:15:55.381369"], ["updated_at", "2022-12-07 15:15:55.381369"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/items/" for ::1 at 2022-12-07 10:16:06 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 39ms (Views: 31.4ms | ActiveRecord: 2.5ms | Allocations: 6387)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:16:06 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started DELETE "/items/7/" for ::1 at 2022-12-07 10:16:08 -0500
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"7", "item"=>{}}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Destroy (0.7ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:16:in `destroy'
+Completed 200 OK in 14ms (Views: 2.9ms | ActiveRecord: 2.7ms | Allocations: 3198)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:16:32 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 0.7ms | Allocations: 839)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:16:32 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 821)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:16:34 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 839)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:16:34 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 821)
+
+
+Started DELETE "/items/6/" for ::1 at 2022-12-07 10:16:36 -0500
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"6", "item"=>{}}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:16:in `destroy'
+Completed 200 OK in 11ms (Views: 3.2ms | ActiveRecord: 2.6ms | Allocations: 2536)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:16:47 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.9ms | Allocations: 753)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:16:47 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 753)
+
+
+Started DELETE "/items/5/" for ::1 at 2022-12-07 10:16:51 -0500
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"5", "item"=>{}}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:16:in `destroy'
+Completed 200 OK in 11ms (Views: 3.0ms | ActiveRecord: 2.9ms | Allocations: 2413)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:16:52 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 685)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:16:52 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 685)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:17:54 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 1.0ms | Allocations: 959)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:17:54 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 958)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:18:36 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 958)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:18:36 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 958)
+
+
+Started DELETE "/items/5/" for ::1 at 2022-12-07 10:18:39 -0500
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"5", "item"=>{}}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Destroy (0.7ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:16:in `destroy'
+Completed 200 OK in 14ms (Views: 3.0ms | ActiveRecord: 3.9ms | Allocations: 2729)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:19:07 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.5ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:19:07 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started DELETE "/items/4/" for ::1 at 2022-12-07 10:19:09 -0500
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"4", "item"=>{}}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:16:in `destroy'
+Completed 200 OK in 10ms (Views: 2.4ms | ActiveRecord: 2.9ms | Allocations: 2624)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:19:16 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 821)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:19:16 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 821)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:19:31 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 40ms (Views: 37.8ms | ActiveRecord: 0.3ms | Allocations: 821)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:19:32 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 821)
+
+
+Started DELETE "/items/3/" for ::1 at 2022-12-07 10:19:33 -0500
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"3", "item"=>{}}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Destroy (0.6ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:16:in `destroy'
+Completed 200 OK in 10ms (Views: 2.4ms | ActiveRecord: 2.3ms | Allocations: 2515)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:24:13 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (4.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 18ms (Views: 11.4ms | ActiveRecord: 4.6ms | Allocations: 753)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:24:13 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 753)
+
+
+Started DELETE "/items/2/" for ::1 at 2022-12-07 10:24:17 -0500
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"2", "item"=>{}}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Destroy (2.0ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:16:in `destroy'
+Completed 200 OK in 14ms (Views: 2.1ms | ActiveRecord: 5.3ms | Allocations: 2409)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:25:33 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 685)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:25:33 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 685)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:26:16 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.7ms | Allocations: 685)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:26:16 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 685)
+
+
+Started DELETE "/items/1/" for ::1 at 2022-12-07 10:26:18 -0500
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"1", "item"=>{}}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:16:in `destroy'
+Completed 200 OK in 10ms (Views: 1.5ms | ActiveRecord: 2.9ms | Allocations: 2303)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:26:28 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 1.0ms | Allocations: 617)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:26:28 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 617)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:26:31 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 617)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:26:31 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 617)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:27:06 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.9ms | Allocations: 1027)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:27:06 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (2.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 2.0ms | Allocations: 1026)
+
+
+Started DELETE "/items/1/" for ::1 at 2022-12-07 10:27:07 -0500
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"1", "item"=>{}}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Destroy (0.6ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:16:in `destroy'
+Completed 200 OK in 12ms (Views: 4.3ms | ActiveRecord: 2.7ms | Allocations: 2834)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:31:18 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.4ms | Allocations: 958)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:31:18 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 958)
+
+
+Started DELETE "/items/2/" for ::1 at 2022-12-07 10:31:19 -0500
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"2", "item"=>{}}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Destroy (0.6ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:16:in `destroy'
+Completed 200 OK in 14ms (Views: 3.4ms | ActiveRecord: 3.8ms | Allocations: 2728)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:31:21 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 890)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:31:21 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 890)
+
+
+Started DELETE "/items/5/" for ::1 at 2022-12-07 10:31:22 -0500
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"5", "item"=>{}}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Destroy (0.5ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:16:in `destroy'
+Completed 200 OK in 10ms (Views: 2.7ms | ActiveRecord: 2.3ms | Allocations: 2624)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:31:24 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 821)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:31:24 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 821)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:32:39 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (3.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 3.1ms | Allocations: 821)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:32:39 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 821)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:33:21 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.4ms | Allocations: 821)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:33:21 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 821)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:33:25 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 821)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:33:25 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 821)
+
+
+Started DELETE "/items/6/" for ::1 at 2022-12-07 10:33:26 -0500
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"6", "item"=>{}}
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Destroy (3.3ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/items_controller.rb:14:in `destroy'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:16:in `destroy'
+Completed 200 OK in 16ms (Views: 2.3ms | ActiveRecord: 6.9ms | Allocations: 2515)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:33:27 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 753)
+
+
+Started GET "/items/" for ::1 at 2022-12-07 10:33:27 -0500
+Processing by ItemsController#index as */*
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/controllers/items_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 753)
+
+
