@@ -13,9 +13,7 @@ class ItemsController < ApplicationController
     def destroy
         Item.find_by_id(params[:id]).destroy
         items = Item.all
-        render json: {
-            items: items
-        }
+        render json: ItemSerializer.new(items)
     end
 
 end
