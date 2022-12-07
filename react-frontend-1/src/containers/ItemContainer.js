@@ -1,26 +1,23 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import Item from "../components/Item";
 
-export default class ItemContainer extends Component {
-    constructor() {
-        super();
-        this.state = {
-            items: []
-        }
-    }
+class ItemContainer extends Component {
 
     render() {
+
         const handleOnClick = (event) => {
             const id = event.target.id
             fetch(`http://localhost:3000/items/${id}/`, {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json" }
             })
-            .then(response => response.json())
+                .then(response => response.json())
+                .then(json => this.props.dispatch({type:"DELETE_ITEM", payload: json}))
         }
 
-        const itemList = this.state.items.map(item => {
-            return <Item id={item.id} description={item.attributes.description} handleClick={handleOnClick} setState={this.setState}/>
+        const itemList = this.props.items.map(item => {
+            return <Item id={item.id} description={item.attributes.description} handleClick={handleOnClick} />
         })
 
         return (
@@ -33,6 +30,14 @@ export default class ItemContainer extends Component {
     componentDidMount() {
         fetch("http://localhost:3000/items/")
             .then(response => response.json())
-            .then(json => this.setState({ items: json.data }))
+            .then(json => this.props.dispatch({type: "ADD_ITEMS", payload: json}))
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        items: state.items
+    }
+}
+
+export default connect(mapStateToProps)(ItemContainer)
