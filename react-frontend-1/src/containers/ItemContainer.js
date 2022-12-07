@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Item from "../components/Item";
 import {connect} from "react-redux"
+import ItemForm from "../components/ItemForm";
 
 class ItemContainer extends Component {
 
@@ -14,12 +15,32 @@ class ItemContainer extends Component {
             .then(response => response.json())
             .then(json => this.props.dispatch({type: "DELETE_ITEM", payload: json}))
         }
+
+        const handleAddItem = (description) => {
+            fetch('http://localhost:3000/items/',
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: 'application/json'
+                },
+                body: JSON.stringify({
+                    item: {
+                        description: description
+                    }})
+                })
+                .then(response => response.json())
+                .then(json => this.props.dispatch({type: "ADD_ITEMS", payload: json}))
+        }
+
+
         const itemList = this.props.items.map(item => {
             return <Item id={item.id} description={item.attributes.description} handleClick={handleOnClick} setState={this.setState}/>
         })
 
         return (
             <div>
+                <ItemForm handleClick={handleAddItem}/>
                 {itemList}
             </div>
         )

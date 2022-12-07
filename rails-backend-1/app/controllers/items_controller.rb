@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
-
+require 'json'
+    
+    
     def index
         items = Item.all
         render json: ItemSerializer.new(items)
@@ -12,6 +14,13 @@ class ItemsController < ApplicationController
 
     def destroy
         Item.find_by_id(params[:id]).destroy
+        items = Item.all
+        render json: ItemSerializer.new(items)
+    end
+
+    def create
+        description = params[:item][:description]
+        Item.create(description: description)
         items = Item.all
         render json: ItemSerializer.new(items)
     end
