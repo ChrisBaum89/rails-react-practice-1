@@ -1,17 +1,12 @@
 import React, { Component } from "react";
 import Item from "../components/Item";
 import ItemForm from "../components/ItemForm";
+import {connect} from 'react-redux'
+import { getItems, addItem, deleteItem } from "../actions/itemActions";
 
-export default class ItemContainer extends Component {
-    constructor() {
-        super()
-        this.state = {
-            items: []
-        }
-    }
+class ItemContainer extends Component {
 
     render() {
-
         const handleItemDelete = (id) => {
             fetch(`http://localhost:3000/items/${id}`,
                 {
@@ -19,7 +14,7 @@ export default class ItemContainer extends Component {
                     headers: { "Content-Type": "application/json" },
                 })
                 .then(response => response.json())
-                .then(json => this.setState({ items: json.data }))
+                .then(json => this.props.deleteItem(json))
         }
 
         const handleItemAdd = (description) => {
@@ -30,10 +25,10 @@ export default class ItemContainer extends Component {
                     body: JSON.stringify({description: description}),
                 })
                 .then(response => response.json())
-                .then(json => this.setState({ items: json.data }))
+                .then(json => this.props.addItem(json))
         }
 
-        const itemList = this.state.items.map(item => {
+        const itemList = this.props.items.map(item => {
             return (
                 <Item id={item.id} description={item.attributes.description} onItemDelete={handleItemDelete}/>
             )
@@ -49,7 +44,15 @@ export default class ItemContainer extends Component {
 
     componentDidMount() {
         fetch("http://localhost:3000/items")
-            .then(response => response.json())
-            .then(json => this.setState({ items: json.data }))
+        .then(response => response.json())
+        .then(json => this.props.getItems(json))
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        items: state.items
+    }
+}
+
+export default connect(mapStateToProps, {getItems, addItem, deleteItem})(ItemContainer)
