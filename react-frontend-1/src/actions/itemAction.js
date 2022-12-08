@@ -11,7 +11,6 @@ export const getItems = () => {
 
 export const deleteItem = (id) => {
     return (dispatch) => {
-        debugger
         dispatch({ type: "START_DELETE_ITEM_REQUEST" })
         fetch(`http://localhost:3000/items/${id}`,
             {
@@ -33,11 +32,11 @@ export const addItem = (description) => {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: {
-                description: description
-            }
-        })
-            .then(response => response.json())
-            .then(data => dispatch({ type: "ADD_ITEM", payload: data }))
-    }
+            body: JSON.stringify({
+                    description: description
+                })
+            })
+            // .then(response => {debugger})
+            // .then(data => dispatch({ type: "ADD_ITEM", payload: data }))
+    }   
 }

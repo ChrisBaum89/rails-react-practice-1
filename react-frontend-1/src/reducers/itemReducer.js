@@ -18,7 +18,6 @@ export function itemReducer(state = {items: [], loading: false}, action){
             }
 
         case "DELETE_ITEM":
-            debugger
             return {
                 ...state,
                 items: action.payload.data,

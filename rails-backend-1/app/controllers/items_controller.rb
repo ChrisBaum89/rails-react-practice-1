@@ -16,4 +16,10 @@ class ItemsController < ApplicationController
         render json: ItemSerializer.new(items)
     end
 
+    def create
+       Item.create(description: params[:description])
+       items = Item.all
+       render json: ItemSerializer.new(items)
+    end
+
 end

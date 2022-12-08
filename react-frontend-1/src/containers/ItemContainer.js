@@ -14,9 +14,8 @@ class ItemContainer extends Component {
     
     render(){
 
-        const handleAddItem = (event) => {
-            debugger
-            this.props.addItem(event.target.value)
+        const handleAddItem = (description) => {
+            this.props.addItem(description)
 
         }
 
@@ -24,9 +23,9 @@ class ItemContainer extends Component {
             this.props.deleteItem(event.target.id)
         }
 
-        const itemList = this.props.items.map(item => {
+        const itemList = this.props.items.map((item) => {
             return(
-                <div>
+                <div key={item.id}>
                     <Item id={item.id} description={item.attributes.description} handleClick={handleDeleteItem}/>
                 </div>
             )

@@ -3,15 +3,18 @@ import React, { Component } from "react";
 class ItemForm extends Component {
     constructor(){
         super();
-        return (
-            {state: this.setState({description: ""})})
+        this.state = {
+            description: ""
+        }
     }
     
     
     render() {
         
         const handleOnChange = (event) => {
-            debugger
+            this.setState({
+                description: event.target.value
+            })
         }
         
         return (
@@ -19,7 +22,7 @@ class ItemForm extends Component {
                 <form>
                     <label>Description</label>
                     <input onChange={(event) => handleOnChange(event)}></input>
-                    <button onClick={(event) => this.props.handleClick(event)}>Add Item</button>
+                    <button onClick={() => this.props.handleClick(this.state.description)}>Add Item</button>
                 </form>
             </div>
         )
