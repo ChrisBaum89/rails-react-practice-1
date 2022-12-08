@@ -2,61 +2,60 @@ import React, { Component } from "react";
 import Item from "../components/Item";
 import {connect} from "react-redux"
 import ItemForm from "../components/ItemForm";
+import { deleteItem, fetchItems, addItem } from "../actions/ItemAction";
 
 class ItemContainer extends Component {
 
     render() {
+
         const handleOnClick = (event) => {
-            const id = event.target.id
-            fetch(`http://localhost:3000/items/${id}/`, {
-                method: "DELETE",
-                headers: { "Content-Type": "application/json" }
-            })
-            .then(response => response.json())
-            .then(json => this.props.dispatch({type: "DELETE_ITEM", payload: json}))
+            const itemId = event.target.id
+            this.props.deleteItem(itemId)
         }
 
         const handleAddItem = (description) => {
-            fetch('http://localhost:3000/items/',
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: 'application/json'
-                },
-                body: JSON.stringify({
-                    item: {
-                        description: description
-                    }})
-                })
-                .then(response => response.json())
-                .then(json => this.props.dispatch({type: "ADD_ITEMS", payload: json}))
+           this.props.addItem(description)
         }
-
 
         const itemList = this.props.items.map(item => {
             return <Item id={item.id} description={item.attributes.description} handleClick={handleOnClick} setState={this.setState}/>
         })
 
+        const formDisplay = () => {
+            if (this.props.loading){
+                return <div>Loading...</div>
+            }
+            else{
+                return <ItemForm handleClick={handleAddItem}/>
+            }
+        }
+
         return (
             <div>
-                <ItemForm handleClick={handleAddItem}/>
+                {formDisplay()}
                 {itemList}
             </div>
         )
     }
 
     componentDidMount() {
-        fetch("http://localhost:3000/items/")
-            .then(response => response.json())
-            .then(json => this.props.dispatch({type: "ADD_ITEMS", payload: json}))
+        this.props.fetchItems()
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        items: state.items
+        items: state.itemList.items,
+        loading: state.itemList.loading
     }
 }
 
-export default connect(mapStateToProps)(ItemContainer)
+const mapDispatchToProps = (dispatch) => {
+    return { 
+        fetchItems: () => dispatch(fetchItems()),
+        deleteItem: (id) => dispatch(deleteItem(id)),
+        addItem: (description) => dispatch(addItem(description)),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ItemContainer)
