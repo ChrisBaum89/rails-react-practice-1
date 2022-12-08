@@ -1,8 +1,7 @@
 class ItemsController < ApplicationController
 
     def index
-        items = Item.all
-        render json: ItemSerializer.new(items)
+        render_items
     end
 
     def show
@@ -12,10 +11,17 @@ class ItemsController < ApplicationController
 
     def destroy
         Item.find_by_id(params[:id]).destroy
+        render_items
+    end
+
+    def create
+        Item.create(description: params[:description])
+        render_items
+    end
+
+    def render_items
         items = Item.all
-        render json: {
-            items: items
-        }
+        render json: ItemSerializer.new(items)
     end
 
 end

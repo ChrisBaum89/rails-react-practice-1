@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 
-export default class Item extends Component{
+export default class Item extends Component {
     render(){
+        
         return(
-            <div id={this.props.id}>
+            <div key={this.props.id}>
                 {this.props.description}
-                <button id={this.props.id} onClick={(event) => this.props.handleClick(event)}>X</button>
+                <button onClick={(id) => this.props.onItemDelete(this.props.id)} >X</button>
             </div>
         )
     }
