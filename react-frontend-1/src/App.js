@@ -5,7 +5,7 @@ import ItemContainer from './containers/ItemContainer';
 function App() {
   return (
     <div className="App">
-      <ItemContainer />
+
     </div>
   );
 }
