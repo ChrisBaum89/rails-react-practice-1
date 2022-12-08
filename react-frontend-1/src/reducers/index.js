@@ -3,5 +3,5 @@ import { itemReducer } from "./itemReducer";
 
 
 export const rootReducer = combineReducers({
-    itemReducer
+    itemList: itemReducer
 })

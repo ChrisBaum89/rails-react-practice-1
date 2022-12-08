@@ -6,7 +6,11 @@ export function itemReducer(state = {items: [], loading: false}, action){
             }
         
         case "ADD_ITEM":
-            return state
+            return {
+                ...state,
+                items: action.payload.data,
+                loading: false,
+            }
 
         case "START_DELETE_ITEM_REQUEST":
             return {
@@ -14,7 +18,12 @@ export function itemReducer(state = {items: [], loading: false}, action){
             }
 
         case "DELETE_ITEM":
-            return state
+            debugger
+            return {
+                ...state,
+                items: action.payload.data,
+                loading: false,
+            }
 
         case "START_GET_ITEMS_REQUEST":
             return {
@@ -22,7 +31,11 @@ export function itemReducer(state = {items: [], loading: false}, action){
             }
 
         case "GET_ITEMS":
-            return state
+            return {
+                ...state,
+                items: action.payload.data,
+                loading: false,
+            }
         
         default:
          return state

@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import thunk, { applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
+import thunk from 'redux-thunk'
+import { applyMiddleware } from 'redux';
 import { createStore } from 'redux';
-import { rootReducer } from './reducers/index.js';
+import { rootReducer } from './reducers';
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
