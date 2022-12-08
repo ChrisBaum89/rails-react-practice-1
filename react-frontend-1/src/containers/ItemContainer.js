@@ -50,12 +50,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return { 
-        fetchItems: () => dispatch(fetchItems()),
-        deleteItem: (id) => dispatch(deleteItem(id)),
-        addItem: (description) => dispatch(addItem(description)),
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ItemContainer)
+export default connect(mapStateToProps, {addItem, deleteItem, fetchItems})(ItemContainer)
