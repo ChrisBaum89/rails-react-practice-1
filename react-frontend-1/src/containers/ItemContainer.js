@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import InputForm from '../components/InputForm';
 
 function ItemContainer() {
+    const [items, setItems] = useState([])
+
+    const handleOnSubmit = () => {
+        debugger
+    }
 
     return(
         <div>
             {/* input form */}
-            <InputForm />
+            <InputForm nnSubmit = {handleOnSubmit}/>
             {/* list of items */}
         </div>
     )
